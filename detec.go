@@ -18,10 +18,18 @@ func detect(phrase string) string {
 	}
 	resultat := []string{}
 	for _, mot := range liste_mots {
-		if mot == "(hex)" && len(resultat) > 0 {
-			if texte, ok := hexatodecimal(resultat[len(resultat)-1]); ok {
-				resultat[len(resultat)-1] = texte
-				continue
+		if len(resultat) > 0 {
+			dernier := resultat[len(resultat)-1]
+			if mot == "(hex)" {
+				if texte, ok := hexatodecimal(dernier); ok {
+					resultat[len(resultat)-1] = texte
+					continue
+				}
+			} else if mot == "(bin)" {
+				if texte, ok := bintodecimal(dernier); ok {
+					resultat[len(resultat)-1] = texte
+					continue
+				}
 			}
 		}
 		resultat = append(resultat, mot)

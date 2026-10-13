@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
-) 
+)
 
 func main() {
 	if len(os.Args) < 2 {
@@ -19,7 +19,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	lignes := strings.Split(string(contenu),"\n")
+	lignes := strings.Split(string(contenu), "\n")
 	for i, ligne := range lignes {
 		fin := ""
 		if strings.HasSuffix(ligne, "\r") {
