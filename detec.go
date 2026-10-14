@@ -30,6 +30,11 @@ func detect(phrase string) string {
 					resultat[len(resultat)-1] = texte
 					continue
 				}
+			} else if mot == "(up)" {
+				if texte, ok := upper(dernier); ok {
+					resultat[len(resultat)-1] = texte
+					continue
+				}
 			}
 		}
 		resultat = append(resultat, mot)
