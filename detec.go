@@ -35,6 +35,11 @@ func detect(phrase string) string {
 					resultat[len(resultat)-1] = texte
 					continue
 				}
+			} else if mot == "(low)" {
+				if texte, ok := lower(dernier); ok {
+					resultat[len(resultat)-1] = texte
+					continue
+				}
 			}
 		}
 		resultat = append(resultat, mot)
