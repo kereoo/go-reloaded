@@ -40,6 +40,11 @@ func detect(phrase string) string {
 					resultat[len(resultat)-1] = texte
 					continue
 				}
+			} else if mot == "(cap)" {
+				if texte, ok := cap(dernier); ok {
+					resultat[len(resultat)-1] = texte
+					continue
+				}
 			}
 		}
 		resultat = append(resultat, mot)
