@@ -26,7 +26,7 @@ func main() {
 			ligne = strings.TrimSuffix(ligne, "\r")
 			fin = "\r"
 		}
-		lignes[i] = detect(ligne) + fin
+		lignes[i] = ponctu(detect(ligne)) + fin
 	}
 	err = os.WriteFile(chemin, []byte(strings.Join(lignes, "\n")), 0644)
 	if err != nil {
