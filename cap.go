@@ -1,6 +1,6 @@
 package main 
 
-func cap(mot string) (string, bool) {
+func capitalize(mot string) (string, bool) {
 	if mot == "" {
 		return "", false
 	}
