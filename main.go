@@ -7,13 +7,16 @@ import (
 )
 
 func main() {
-	if len(os.Args) < 2 {
-		fmt.Println("Veuillez utiliser comme tel : go run . <fichier_a_traiter.txt>")
-		os.Exit(1)
+	entree := "texte.txt"
+	sortie := "resultat.txt"
+	
+	if len(os.Args) >= 2 {
+		entree = os.Args[1]
 	}
-	chemin := os.Args[1]
-
-	contenu, err := os.ReadFile(chemin)
+	if len(os.Args) >= 3 {
+		sortie = os.Args[2]
+	}
+	contenu, err := os.ReadFile(entree)
 	if err != nil {
 		fmt.Println("Erreur de lecture :", err)
 		os.Exit(1)
@@ -26,12 +29,12 @@ func main() {
 			ligne = strings.TrimSuffix(ligne, "\r")
 			fin = "\r"
 		}
-		lignes[i] = ponctu(detect(ligne)) + fin
+		lignes[i] = Guillemets(ponctu(detect(ligne))) + fin
 	}
-	err = os.WriteFile(chemin, []byte(strings.Join(lignes, "\n")), 0644)
+	err = os.WriteFile(sortie, []byte(strings.Join(lignes, "\n")), 0644)
 	if err != nil {
 		fmt.Println("Erreur d'écriture :", err)
 		os.Exit(1)
 	}
-	fmt.Println("Fichier modifié :", chemin)
+	fmt.Println("Fichier modifié :", sortie)
 }

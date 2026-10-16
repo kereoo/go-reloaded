@@ -1,5 +1,5 @@
-Le nombre 30 vaut 30 et 10 vaut 10. Donc c'est BON et ouaiss
+Le nombre 1E (hex) vaut 30 et 1010 (bin) vaut 10. Donc c'est bon (up) et OUAISS (low)
 
-This is SO EXCITING et ça va bien ok Bonjour
+This is so exciting (up, 2) et ça va BIEN (low, 3) ok bonjour (cap)
 
-Il est actuellement 12:56 et tout va bien...
+Il est actuellement ' 12:56 ' et tout va bien ...
