@@ -1,4 +1,4 @@
-package  main
+package main
 
 func estPonct(r rune) bool {
 	return r == '.' || r == ',' || r == '!' || r == '?' || r == ':' || r == ';'
@@ -12,7 +12,7 @@ func ponctu(phrase string) string {
 	runes := []rune(phrase)
 	resultat := []rune{}
 	for i := 0; i < len(runes); i++ {
-		r:= runes[i]
+		r := runes[i]
 		if !estPonct(r) {
 			resultat = append(resultat, r)
 			continue
@@ -38,4 +38,3 @@ func ponctu(phrase string) string {
 	}
 	return string(resultat)
 }
-

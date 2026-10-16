@@ -19,7 +19,7 @@ func detect(phrase string) string {
 		liste_mots = append(liste_mots, conca)
 	}
 
-	fusion :=[]string{}
+	fusion := []string{}
 	for i := 0; i < len(liste_mots); i++ {
 		mot := liste_mots[i]
 		if strings.HasPrefix(mot, "(") && !strings.HasSuffix(mot, ")") && i+1 < len(liste_mots) {
@@ -62,7 +62,7 @@ func detect(phrase string) string {
 			} else if nom, n, ok := lireCommande(mot); ok {
 				debut := len(resultat) - n
 				if debut < 0 {
-					debut = 0 
+					debut = 0
 				}
 				for i := debut; i < len(resultat); i++ {
 					switch nom {
@@ -75,7 +75,7 @@ func detect(phrase string) string {
 					}
 				}
 				continue
-			} 
+			}
 		}
 		resultat = append(resultat, mot)
 	}

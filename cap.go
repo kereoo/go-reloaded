@@ -1,4 +1,4 @@
-package main 
+package main
 
 func capitalize(mot string) (string, bool) {
 	if mot == "" {
@@ -6,10 +6,10 @@ func capitalize(mot string) (string, bool) {
 	}
 	premierelettre := mot[0]
 	if premierelettre >= 'a' && premierelettre <= 'z' {
-		premierelettre -=  32
+		premierelettre -= 32
 	}
 	motCap := string(premierelettre)
-	for i := 1 ; i < len(mot) ; i++ {
+	for i := 1; i < len(mot); i++ {
 		motCap += string(mot[i])
 	}
 	return motCap, true

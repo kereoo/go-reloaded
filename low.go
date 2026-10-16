@@ -1,4 +1,4 @@
-package main 
+package main
 
 func lower(mot string) (string, bool) {
 	if mot == "" {
@@ -7,7 +7,7 @@ func lower(mot string) (string, bool) {
 	motMin := ""
 	for _, lettre := range mot {
 		if lettre >= 'A' && lettre <= 'Z' {
-			lettre +=  32
+			lettre += 32
 		}
 		motMin += string(lettre)
 

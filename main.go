@@ -9,7 +9,7 @@ import (
 func main() {
 	entree := "texte.txt"
 	sortie := "resultat.txt"
-	
+
 	if len(os.Args) >= 2 {
 		entree = os.Args[1]
 	}
@@ -29,7 +29,7 @@ func main() {
 			ligne = strings.TrimSuffix(ligne, "\r")
 			fin = "\r"
 		}
-		lignes[i] = Guillemets(ponctu(detect(ligne))) + fin
+		lignes[i] = Guillemets(ponctu(article(detect(ligne)))) + fin
 	}
 	err = os.WriteFile(sortie, []byte(strings.Join(lignes, "\n")), 0644)
 	if err != nil {

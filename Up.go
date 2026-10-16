@@ -1,4 +1,4 @@
-package main 
+package main
 
 func upper(mot string) (string, bool) {
 	if mot == "" {
@@ -7,7 +7,7 @@ func upper(mot string) (string, bool) {
 	motMaj := ""
 	for _, lettre := range mot {
 		if lettre >= 'a' && lettre <= 'z' {
-			lettre -=  32
+			lettre -= 32
 		}
 		motMaj += string(lettre)
 

@@ -1,7 +1,7 @@
 package main
- 
+
 func estGui(runes []rune, compteur int) bool {
-	if runes[compteur] != '\''{
+	if runes[compteur] != '\'' {
 		return false
 	}
 	pre := compteur == 0 || runes[compteur-1] == ' '
@@ -14,18 +14,18 @@ func Guillemets(phrase string) string {
 
 	total := 0
 	for compteur := range runes {
-		if estGui(runes, compteur){
+		if estGui(runes, compteur) {
 			total++
 		}
 	}
-	limite 	:= total - total%2
+	limite := total - total%2
 
 	resultat := []rune{}
 	vus := 0
-	ouvert := false 
+	ouvert := false
 	for i := 0; i < len(runes); i++ {
 		if vus >= limite || !estGui(runes, i) {
-			resultat = append(resultat, runes [i])
+			resultat = append(resultat, runes[i])
 			continue
 		}
 		vus++
@@ -37,7 +37,7 @@ func Guillemets(phrase string) string {
 			ouvert = true
 		} else {
 			for len(resultat) > 0 && resultat[len(resultat)-1] == ' ' {
-				resultat = resultat [:len(resultat)-1]
+				resultat = resultat[:len(resultat)-1]
 			}
 			resultat = append(resultat, '\'')
 			ouvert = false
